@@ -1,0 +1,50 @@
+  enum Language {
+    FRENCH, ENGLISH, SPANISH,CHINESE
+  }
+  
+  enum Tabletype {
+    PARAMETER , DATA , TEMPLATE ,TEMPLATEDATA
+  }
+  
+    enum Columntype {
+    SYSTEM, LOG, AUDIT,COMMON,CUSTOM
+  }
+  
+entity Person {
+   name          String,
+   code          String,
+   tel           String,
+   fax           String,
+   mail          String
+ }
+ 
+entity Department {
+   name          String,
+   code          String,
+   tel           String,
+   fax           String,
+   mail          String
+ } 
+
+relationship OneToMany {
+  Department{person} to Person{department(name) required}
+}
+
+relationship ManyToOne {
+	Department{parent} to Department
+}
+
+  
+// Set pagination options
+paginate Person, Department with infinite-scroll 
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl 
+// Set an angular suffix
+angularSuffix * with sdmSuffix
+
+
+  
+

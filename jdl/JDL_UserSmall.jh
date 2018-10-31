@@ -1,0 +1,96 @@
+entity ARightUser {	
+   userPassword        String maxlength(640),
+   processPassword     String maxlength(640),
+   userSort            String ,
+   userPasswordValiinstantTimes Long,
+   userPasswordLockFlag String,
+   procPasswordValiinstantTimes Long,
+   procPasswordLockFlag String,
+   userProp            String,
+   by01                 String,
+   by02                 String,
+   by03                 String,
+   by04                 String,
+   by05                 String,
+   validType           String,
+   validBegin          Instant,
+   validEnd            Instant,
+   insertUserId       String,
+   insertPersonId     String,
+   insertTime          Instant,
+   upinstantUserId       String,
+   upinstantPersonId     String,
+   upinstantTime          Instant
+
+}
+
+entity ARightPerson {
+   personName          String,
+   firstName           String,
+   jobId               String,
+   lastName            String,
+   otherName           String,
+   sex                  String,
+   birthday             Instant,
+   pic                  String,
+   icon                 String,
+   mobile               String,
+   depId               String,
+   depAddress          String,
+   depCode             String,
+   dutyId              String,
+   dimissionFlag       String,
+   headerFlag          String,
+   satrapFlag          String,
+   leaderFlag          String,
+   postFlag1          String,
+   postFlag2          String,
+   postFlag3          String,
+   officeTel           String,
+   fax                  String,
+   mail1                String,
+   mail2                String,
+   familyTel           String,
+   familyAdd           String,
+   familyCode          String,
+   personDescribe      String,
+   idCode              String,
+   pop3                 String,
+   smtp                 String,
+   mailUsername        String,
+   mailPassword        String,
+   mailKeepFlag       String,
+   personSort          String,
+   levelNum            Long,
+   personStateId      String,
+   by01                 String,
+   by02                 String,
+   by03                 String,
+   by04                 String,
+   by05                 String,
+   by06                 String,
+   by07                 String,
+   by08                 String,
+   by09                 String,
+   by10                 String,
+   validType           String,
+   validBegin          Instant,
+   validEnd            Instant,
+   insertUserId       String,
+   insertPersonId     String,
+   insertTime          Instant,
+   upinstantUserId       String,
+   upinstantPersonId     String,
+   upinstantTime          Instant
+
+}
+ 
+// Set pagination options
+paginate ARightPerson, ARightUser  with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl 
+// Set an angular suffix
+angularSuffix * with mySuffix

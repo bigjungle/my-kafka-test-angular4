@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity ARightUser.
+    -->
+    <changeSet id="20180515063750-1" author="jhipster">
+        <createTable tableName="a_right_user">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="user_password" type="varchar(640)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="process_password" type="varchar(640)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="user_sort" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="user_password_valiinstant_times" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="user_password_lock_flag" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="proc_password_valiinstant_times" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="proc_password_lock_flag" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="user_prop" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="by_01" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="by_02" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="by_03" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="by_04" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="by_05" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="valid_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="valid_begin" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="valid_end" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="insert_user_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="insert_person_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="insert_time" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="upinstant_user_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="upinstant_person_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="upinstant_time" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="a_right_user" columnName="valid_begin" columnDataType="datetime"/>
+        <dropDefaultValue tableName="a_right_user" columnName="valid_end" columnDataType="datetime"/>
+        <dropDefaultValue tableName="a_right_user" columnName="insert_time" columnDataType="datetime"/>
+        <dropDefaultValue tableName="a_right_user" columnName="upinstant_time" columnDataType="datetime"/>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

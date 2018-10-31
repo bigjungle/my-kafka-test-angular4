@@ -1,0 +1,43 @@
+
+<div *ngIf="datable">
+    <h2><span>Datable</span> {{datable.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Name</span></dt>
+        <dd>
+            <span>{{datable.name}}</span>
+        </dd>
+        <dt><span>Title</span></dt>
+        <dd>
+            <span>{{datable.title}}</span>
+        </dd>
+        <dt><span>Description</span></dt>
+        <dd>
+            <span>{{datable.description}}</span>
+        </dd>
+        <dt><span>Tabletype</span></dt>
+        <dd>
+            <span>{{datable.tabletype}}</span>
+        </dd>
+        <dt><span>Columns</span></dt>
+        <dd>
+            <span *ngFor="let columns of datable.columns; let last = last">
+                <a [routerLink]="['/dacolumn-sdm-suffix', columns?.id ]">{{columns.name}}</a>{{last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'datable-sdm-suffix/'+ datable.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

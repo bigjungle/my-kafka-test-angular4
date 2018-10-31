@@ -1,0 +1,60 @@
+
+  enum Language {
+    FRENCH, ENGLISH, SPANISH,CHINESE
+  }
+  
+  enum Tabletype {
+    PARAMETER , DATA , TEMPLATE ,TEMPLATEDATA
+  }
+  
+    enum Columntype {
+    SYS, LOG, AUDIT,COMMON,CUSTOM
+  }
+  
+  entity Datable {
+	name String required,
+	title String,
+	description String,
+	tabletype Tabletype required
+}
+
+entity Dacolumn {
+    name String required,
+	title String,
+	description String,
+	columntype Columntype required
+}
+
+
+relationship ManyToMany {
+	Datable{columns(name)} to Dacolumn{datable required}
+}
+ 
+   entity Book {
+    title String required,
+    description String,
+    language Language
+  }
+  
+ entity Author {
+  name String required
+}
+
+relationship OneToMany {
+  Author{book} to Book{writer(name) required}
+}
+
+// Set pagination options
+paginate Datable, Dacolumn with infinite-scroll 
+paginate Book,Author with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl 
+// Set an angular suffix
+angularSuffix * with sdmSuffix
+
+
+  
+

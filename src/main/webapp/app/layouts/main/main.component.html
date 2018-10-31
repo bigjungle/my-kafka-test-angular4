@@ -1,0 +1,58 @@
+<jhi-page-ribbon></jhi-page-ribbon>
+<div>
+    <router-outlet name="navbar"></router-outlet>
+</div>
+<div>
+    <router-outlet name="navbarside"></router-outlet>
+</div>
+<div class="row">
+    <div class="w-20 p2 row" ui-view="sidebar"  >
+        <ul>
+            <li>
+                <a class="dropdown-item" routerLink="a-right-user-my-suffix" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                    <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                    <span>User</span>
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" routerLink="a-right-person-my-suffix" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                    <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                    <span>person</span>
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" routerLink="person-sdm-suffix" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                    <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                    <span>人员管理</span>
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" routerLink="department-sdm-suffix" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                    <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                    <span>部门管理</span>
+                </a>
+            </li>
+            <!--<li>-->
+            <!--<a class="dropdown-item" routerLink="dep-sdm-suffix" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">-->
+            <!--<i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>-->
+            <!--<span>Dep Sdm Suffix</span>-->
+            <!--</a>-->
+            <!--</li>-->
+            <li>
+                <a class="dropdown-item" routerLink="sys-dir-sdm-suffix" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                    <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                    <span>系统名录</span>
+                </a>
+            </li>
+            <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
+        </ul>
+    </div>
+    <div class="w-75 container-fluid row ">
+
+        <div class="card jh-card">
+            <router-outlet></router-outlet>
+            <router-outlet name="popup"></router-outlet>
+        </div>
+        <jhi-footer></jhi-footer>
+    </div>
+</div>

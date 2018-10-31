@@ -1,0 +1,109 @@
+
+<div *ngIf="aRightUser">
+    <h2><span>A Right User</span> {{aRightUser.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>User Password</span></dt>
+        <dd>
+            <span>{{aRightUser.userPassword}}</span>
+        </dd>
+        <dt><span>Process Password</span></dt>
+        <dd>
+            <span>{{aRightUser.processPassword}}</span>
+        </dd>
+        <dt><span>User Sort</span></dt>
+        <dd>
+            <span>{{aRightUser.userSort}}</span>
+        </dd>
+        <dt><span>User Password Valiinstant Times</span></dt>
+        <dd>
+            <span>{{aRightUser.userPasswordValiinstantTimes}}</span>
+        </dd>
+        <dt><span>User Password Lock Flag</span></dt>
+        <dd>
+            <span>{{aRightUser.userPasswordLockFlag}}</span>
+        </dd>
+        <dt><span>Proc Password Valiinstant Times</span></dt>
+        <dd>
+            <span>{{aRightUser.procPasswordValiinstantTimes}}</span>
+        </dd>
+        <dt><span>Proc Password Lock Flag</span></dt>
+        <dd>
+            <span>{{aRightUser.procPasswordLockFlag}}</span>
+        </dd>
+        <dt><span>User Prop</span></dt>
+        <dd>
+            <span>{{aRightUser.userProp}}</span>
+        </dd>
+        <dt><span>By 01</span></dt>
+        <dd>
+            <span>{{aRightUser.by01}}</span>
+        </dd>
+        <dt><span>By 02</span></dt>
+        <dd>
+            <span>{{aRightUser.by02}}</span>
+        </dd>
+        <dt><span>By 03</span></dt>
+        <dd>
+            <span>{{aRightUser.by03}}</span>
+        </dd>
+        <dt><span>By 04</span></dt>
+        <dd>
+            <span>{{aRightUser.by04}}</span>
+        </dd>
+        <dt><span>By 05</span></dt>
+        <dd>
+            <span>{{aRightUser.by05}}</span>
+        </dd>
+        <dt><span>Valid Type</span></dt>
+        <dd>
+            <span>{{aRightUser.validType}}</span>
+        </dd>
+        <dt><span>Valid Begin</span></dt>
+        <dd>
+            <span>{{aRightUser.validBegin | date:'medium'}}</span>
+        </dd>
+        <dt><span>Valid End</span></dt>
+        <dd>
+            <span>{{aRightUser.validEnd | date:'medium'}}</span>
+        </dd>
+        <dt><span>Insert User Id</span></dt>
+        <dd>
+            <span>{{aRightUser.insertUserId}}</span>
+        </dd>
+        <dt><span>Insert Person Id</span></dt>
+        <dd>
+            <span>{{aRightUser.insertPersonId}}</span>
+        </dd>
+        <dt><span>Insert Time</span></dt>
+        <dd>
+            <span>{{aRightUser.insertTime | date:'medium'}}</span>
+        </dd>
+        <dt><span>Upinstant User Id</span></dt>
+        <dd>
+            <span>{{aRightUser.upinstantUserId}}</span>
+        </dd>
+        <dt><span>Upinstant Person Id</span></dt>
+        <dd>
+            <span>{{aRightUser.upinstantPersonId}}</span>
+        </dd>
+        <dt><span>Upinstant Time</span></dt>
+        <dd>
+            <span>{{aRightUser.upinstantTime | date:'medium'}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'a-right-user-my-suffix/'+ aRightUser.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

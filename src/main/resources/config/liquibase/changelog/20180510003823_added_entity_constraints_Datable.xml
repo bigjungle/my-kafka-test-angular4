@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Datable.
+    -->
+    <changeSet id="20180510003823-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="datables_id"
+                                 baseTableName="datable_columns"
+                                 constraintName="fk_datable_columns_datables_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="datable"/>
+        <addForeignKeyConstraint baseColumnNames="columns_id"
+                                 baseTableName="datable_columns"
+                                 constraintName="fk_datable_columns_columns_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="dacolumn"/>
+        
+    </changeSet>
+</databaseChangeLog>

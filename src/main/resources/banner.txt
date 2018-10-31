@@ -1,0 +1,13 @@
+
+  ${AnsiColor.GREEN}                                 ${AnsiColor.RED}  _______   _       _           _
+  ${AnsiColor.GREEN}     /\                          ${AnsiColor.RED} |__   __| | |     (_)         | |
+  ${AnsiColor.GREEN}    /  \      ___   _ __    ___  ${AnsiColor.RED}    | |    | |__    _   _ __   | | __   ___   _ __
+  ${AnsiColor.GREEN}   / /\ \    / _ \ | '__|  / _ \ ${AnsiColor.RED}    | |    | '_ \  | | | '_ \  | |/ /  / _ \ | '__|
+  ${AnsiColor.GREEN}  / ____ \  |  __/ | |    | (_) |${AnsiColor.RED}    | |    | | | | | | | | | | |   <  |  __/ | |
+  ${AnsiColor.GREEN} /_/    \_\  \___| |_|     \___/ ${AnsiColor.RED}    |_|    |_| |_| |_| |_| |_| |_|\_\  \___| |_|
+
+
+${AnsiColor.BRIGHT_BLUE}:: AeroThinker 🤓  :: Running Spring Boot ${spring-boot.version} ::
+:: http://www.aerothinker.tech ::${AnsiColor.DEFAULT}
+
+

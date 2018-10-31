@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity ARightPerson.
+    -->
+    <changeSet id="20180515063751-1" author="jhipster">
+        <createTable tableName="a_right_person">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="person_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="first_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="job_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="last_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="other_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="sex" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="birthday" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="pic" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="icon" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="mobile" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="dep_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="dep_address" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="dep_code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="duty_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="dimission_flag" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="header_flag" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="satrap_flag" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="leader_flag" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="post_flag_1" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="post_flag_2" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="post_flag_3" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="office_tel" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="fax" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="mail_1" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="mail_2" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="family_tel" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="family_add" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="family_code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="person_describe" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="id_code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="pop_3" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="smtp" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="mail_username" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="mail_password" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="mail_keep_flag" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="person_sort" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="level_num" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="person_state_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="by_01" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="by_02" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="by_03" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="by_04" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="by_05" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="by_06" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="by_07" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="by_08" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="by_09" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="by_10" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="valid_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="valid_begin" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="valid_end" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="insert_user_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="insert_person_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="insert_time" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="upinstant_user_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="upinstant_person_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="upinstant_time" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="a_right_person" columnName="birthday" columnDataType="datetime"/>
+        <dropDefaultValue tableName="a_right_person" columnName="valid_begin" columnDataType="datetime"/>
+        <dropDefaultValue tableName="a_right_person" columnName="valid_end" columnDataType="datetime"/>
+        <dropDefaultValue tableName="a_right_person" columnName="insert_time" columnDataType="datetime"/>
+        <dropDefaultValue tableName="a_right_person" columnName="upinstant_time" columnDataType="datetime"/>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

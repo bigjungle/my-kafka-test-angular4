@@ -1,0 +1,44 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "relationshipValidateRules": "required",
+            "relationshipName": "datable",
+            "otherEntityName": "datable",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "columns"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "columntype",
+            "fieldType": "Columntype",
+            "fieldValues": "SYS,LOG,AUDIT,COMMON,CUSTOM",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20180510003824",
+    "entityTableName": "dacolumn",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "angularJSSuffix": "sdmSuffix"
+}

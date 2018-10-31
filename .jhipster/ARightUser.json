@@ -1,0 +1,108 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "userPassword",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 640
+        },
+        {
+            "fieldName": "processPassword",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 640
+        },
+        {
+            "fieldName": "userSort",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "userPasswordValiinstantTimes",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "userPasswordLockFlag",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "procPasswordValiinstantTimes",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "procPasswordLockFlag",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "userProp",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "by01",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "by02",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "by03",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "by04",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "by05",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "validType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "validBegin",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "validEnd",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "insertUserId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "insertPersonId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "insertTime",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "upinstantUserId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "upinstantPersonId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "upinstantTime",
+            "fieldType": "Instant"
+        }
+    ],
+    "changelogDate": "20180515063750",
+    "entityTableName": "a_right_user",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "angularJSSuffix": "mySuffix"
+}

@@ -1,0 +1,103 @@
+
+<div *ngIf="sysDir">
+    <h2><span>Sys Dir</span> {{sysDir.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Name</span></dt>
+        <dd>
+            <span>{{sysDir.name}}</span>
+        </dd>
+        <dt><span>Type</span></dt>
+        <dd>
+            <span>{{sysDir.type}}</span>
+        </dd>
+        <dt><span>Code</span></dt>
+        <dd>
+            <span>{{sysDir.code}}</span>
+        </dd>
+        <dt><span>Asset Number</span></dt>
+        <dd>
+            <span>{{sysDir.assetNumber}}</span>
+        </dd>
+        <dt><span>Ipv 4</span></dt>
+        <dd>
+            <span>{{sysDir.ipv4}}</span>
+        </dd>
+        <dt><span>Ipv 6</span></dt>
+        <dd>
+            <span>{{sysDir.ipv6}}</span>
+        </dd>
+        <dt><span>Model</span></dt>
+        <dd>
+            <span>{{sysDir.model}}</span>
+        </dd>
+        <dt><span>Config</span></dt>
+        <dd>
+            <span>{{sysDir.config}}</span>
+        </dd>
+        <dt><span>Uses</span></dt>
+        <dd>
+            <span>{{sysDir.uses}}</span>
+        </dd>
+        <dt><span>Developer</span></dt>
+        <dd>
+            <span>{{sysDir.developer}}</span>
+        </dd>
+        <dt><span>Version</span></dt>
+        <dd>
+            <span>{{sysDir.version}}</span>
+        </dd>
+        <dt><span>Prod Date</span></dt>
+        <dd>
+            <span>{{sysDir.prodDate | date:'medium'}}</span>
+        </dd>
+        <dt><span>Deploy Date</span></dt>
+        <dd>
+            <span>{{sysDir.deployDate | date:'medium'}}</span>
+        </dd>
+        <dt><span>Service Life</span></dt>
+        <dd>
+            <span>{{sysDir.serviceLife}}</span>
+        </dd>
+        <dt><span>Status</span></dt>
+        <dd>
+            <span>{{sysDir.status}}</span>
+        </dd>
+        <dt><span>Confident Level</span></dt>
+        <dd>
+            <span>{{sysDir.confidentLevel}}</span>
+        </dd>
+        <dt><span>Parent</span></dt>
+        <dd>
+            <div *ngIf="sysDir.parentId">
+                <a [routerLink]="['/sys-dir-sdm-suffix', sysDir.parentId]">{{sysDir.parentId}}</a>
+            </div>
+        </dd>
+        <dt><span>Department</span></dt>
+        <dd>
+            <div *ngIf="sysDir.departmentId">
+                <a [routerLink]="['/department-sdm-suffix', sysDir.departmentId]">{{sysDir.departmentName}}</a>
+            </div>
+        </dd>
+        <dt><span>Person</span></dt>
+        <dd>
+            <div *ngIf="sysDir.personId">
+                <a [routerLink]="['/person-sdm-suffix', sysDir.personId]">{{sysDir.personName}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'sys-dir-sdm-suffix/'+ sysDir.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

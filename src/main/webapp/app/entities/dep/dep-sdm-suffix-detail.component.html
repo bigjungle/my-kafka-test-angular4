@@ -1,0 +1,47 @@
+
+<div *ngIf="dep">
+    <h2><span>Dep</span> {{dep.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Name</span></dt>
+        <dd>
+            <span>{{dep.name}}</span>
+        </dd>
+        <dt><span>Code</span></dt>
+        <dd>
+            <span>{{dep.code}}</span>
+        </dd>
+        <dt><span>Tel</span></dt>
+        <dd>
+            <span>{{dep.tel}}</span>
+        </dd>
+        <dt><span>Fax</span></dt>
+        <dd>
+            <span>{{dep.fax}}</span>
+        </dd>
+        <dt><span>Mail</span></dt>
+        <dd>
+            <span>{{dep.mail}}</span>
+        </dd>
+        <dt><span>Upper</span></dt>
+        <dd>
+            <div *ngIf="dep.upperId">
+                <a [routerLink]="['/dep-sdm-suffix', dep.upperId]">{{dep.upperId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'dep-sdm-suffix/'+ dep.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

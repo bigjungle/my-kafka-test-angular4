@@ -1,0 +1,320 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myARightPersonLabel">Create or edit a A Right Person</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!aRightPerson.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="aRightPerson.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_personName">Person Name</label>
+            <input type="text" class="form-control" name="personName" id="field_personName"
+                [(ngModel)]="aRightPerson.personName"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_firstName">First Name</label>
+            <input type="text" class="form-control" name="firstName" id="field_firstName"
+                [(ngModel)]="aRightPerson.firstName"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_jobId">Job Id</label>
+            <input type="text" class="form-control" name="jobId" id="field_jobId"
+                [(ngModel)]="aRightPerson.jobId"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_lastName">Last Name</label>
+            <input type="text" class="form-control" name="lastName" id="field_lastName"
+                [(ngModel)]="aRightPerson.lastName"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_otherName">Other Name</label>
+            <input type="text" class="form-control" name="otherName" id="field_otherName"
+                [(ngModel)]="aRightPerson.otherName"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_sex">Sex</label>
+            <input type="text" class="form-control" name="sex" id="field_sex"
+                [(ngModel)]="aRightPerson.sex"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_birthday">Birthday</label>
+            <div class="d-flex">
+                <input id="field_birthday" type="datetime-local" class="form-control" name="birthday" [(ngModel)]="aRightPerson.birthday"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_pic">Pic</label>
+            <input type="text" class="form-control" name="pic" id="field_pic"
+                [(ngModel)]="aRightPerson.pic"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_icon">Icon</label>
+            <input type="text" class="form-control" name="icon" id="field_icon"
+                [(ngModel)]="aRightPerson.icon"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_mobile">Mobile</label>
+            <input type="text" class="form-control" name="mobile" id="field_mobile"
+                [(ngModel)]="aRightPerson.mobile"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_depId">Dep Id</label>
+            <input type="text" class="form-control" name="depId" id="field_depId"
+                [(ngModel)]="aRightPerson.depId"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_depAddress">Dep Address</label>
+            <input type="text" class="form-control" name="depAddress" id="field_depAddress"
+                [(ngModel)]="aRightPerson.depAddress"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_depCode">Dep Code</label>
+            <input type="text" class="form-control" name="depCode" id="field_depCode"
+                [(ngModel)]="aRightPerson.depCode"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_dutyId">Duty Id</label>
+            <input type="text" class="form-control" name="dutyId" id="field_dutyId"
+                [(ngModel)]="aRightPerson.dutyId"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_dimissionFlag">Dimission Flag</label>
+            <input type="text" class="form-control" name="dimissionFlag" id="field_dimissionFlag"
+                [(ngModel)]="aRightPerson.dimissionFlag"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_headerFlag">Header Flag</label>
+            <input type="text" class="form-control" name="headerFlag" id="field_headerFlag"
+                [(ngModel)]="aRightPerson.headerFlag"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_satrapFlag">Satrap Flag</label>
+            <input type="text" class="form-control" name="satrapFlag" id="field_satrapFlag"
+                [(ngModel)]="aRightPerson.satrapFlag"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_leaderFlag">Leader Flag</label>
+            <input type="text" class="form-control" name="leaderFlag" id="field_leaderFlag"
+                [(ngModel)]="aRightPerson.leaderFlag"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_postFlag1">Post Flag 1</label>
+            <input type="text" class="form-control" name="postFlag1" id="field_postFlag1"
+                [(ngModel)]="aRightPerson.postFlag1"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_postFlag2">Post Flag 2</label>
+            <input type="text" class="form-control" name="postFlag2" id="field_postFlag2"
+                [(ngModel)]="aRightPerson.postFlag2"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_postFlag3">Post Flag 3</label>
+            <input type="text" class="form-control" name="postFlag3" id="field_postFlag3"
+                [(ngModel)]="aRightPerson.postFlag3"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_officeTel">Office Tel</label>
+            <input type="text" class="form-control" name="officeTel" id="field_officeTel"
+                [(ngModel)]="aRightPerson.officeTel"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_fax">Fax</label>
+            <input type="text" class="form-control" name="fax" id="field_fax"
+                [(ngModel)]="aRightPerson.fax"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_mail1">Mail 1</label>
+            <input type="text" class="form-control" name="mail1" id="field_mail1"
+                [(ngModel)]="aRightPerson.mail1"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_mail2">Mail 2</label>
+            <input type="text" class="form-control" name="mail2" id="field_mail2"
+                [(ngModel)]="aRightPerson.mail2"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_familyTel">Family Tel</label>
+            <input type="text" class="form-control" name="familyTel" id="field_familyTel"
+                [(ngModel)]="aRightPerson.familyTel"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_familyAdd">Family Add</label>
+            <input type="text" class="form-control" name="familyAdd" id="field_familyAdd"
+                [(ngModel)]="aRightPerson.familyAdd"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_familyCode">Family Code</label>
+            <input type="text" class="form-control" name="familyCode" id="field_familyCode"
+                [(ngModel)]="aRightPerson.familyCode"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_personDescribe">Person Describe</label>
+            <input type="text" class="form-control" name="personDescribe" id="field_personDescribe"
+                [(ngModel)]="aRightPerson.personDescribe"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_idCode">Id Code</label>
+            <input type="text" class="form-control" name="idCode" id="field_idCode"
+                [(ngModel)]="aRightPerson.idCode"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_pop3">Pop 3</label>
+            <input type="text" class="form-control" name="pop3" id="field_pop3"
+                [(ngModel)]="aRightPerson.pop3"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_smtp">Smtp</label>
+            <input type="text" class="form-control" name="smtp" id="field_smtp"
+                [(ngModel)]="aRightPerson.smtp"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_mailUsername">Mail Username</label>
+            <input type="text" class="form-control" name="mailUsername" id="field_mailUsername"
+                [(ngModel)]="aRightPerson.mailUsername"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_mailPassword">Mail Password</label>
+            <input type="text" class="form-control" name="mailPassword" id="field_mailPassword"
+                [(ngModel)]="aRightPerson.mailPassword"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_mailKeepFlag">Mail Keep Flag</label>
+            <input type="text" class="form-control" name="mailKeepFlag" id="field_mailKeepFlag"
+                [(ngModel)]="aRightPerson.mailKeepFlag"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_personSort">Person Sort</label>
+            <input type="text" class="form-control" name="personSort" id="field_personSort"
+                [(ngModel)]="aRightPerson.personSort"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_levelNum">Level Num</label>
+            <input type="number" class="form-control" name="levelNum" id="field_levelNum"
+                [(ngModel)]="aRightPerson.levelNum"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_personStateId">Person State Id</label>
+            <input type="text" class="form-control" name="personStateId" id="field_personStateId"
+                [(ngModel)]="aRightPerson.personStateId"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_by01">By 01</label>
+            <input type="text" class="form-control" name="by01" id="field_by01"
+                [(ngModel)]="aRightPerson.by01"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_by02">By 02</label>
+            <input type="text" class="form-control" name="by02" id="field_by02"
+                [(ngModel)]="aRightPerson.by02"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_by03">By 03</label>
+            <input type="text" class="form-control" name="by03" id="field_by03"
+                [(ngModel)]="aRightPerson.by03"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_by04">By 04</label>
+            <input type="text" class="form-control" name="by04" id="field_by04"
+                [(ngModel)]="aRightPerson.by04"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_by05">By 05</label>
+            <input type="text" class="form-control" name="by05" id="field_by05"
+                [(ngModel)]="aRightPerson.by05"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_by06">By 06</label>
+            <input type="text" class="form-control" name="by06" id="field_by06"
+                [(ngModel)]="aRightPerson.by06"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_by07">By 07</label>
+            <input type="text" class="form-control" name="by07" id="field_by07"
+                [(ngModel)]="aRightPerson.by07"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_by08">By 08</label>
+            <input type="text" class="form-control" name="by08" id="field_by08"
+                [(ngModel)]="aRightPerson.by08"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_by09">By 09</label>
+            <input type="text" class="form-control" name="by09" id="field_by09"
+                [(ngModel)]="aRightPerson.by09"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_by10">By 10</label>
+            <input type="text" class="form-control" name="by10" id="field_by10"
+                [(ngModel)]="aRightPerson.by10"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_validType">Valid Type</label>
+            <input type="text" class="form-control" name="validType" id="field_validType"
+                [(ngModel)]="aRightPerson.validType"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_validBegin">Valid Begin</label>
+            <div class="d-flex">
+                <input id="field_validBegin" type="datetime-local" class="form-control" name="validBegin" [(ngModel)]="aRightPerson.validBegin"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_validEnd">Valid End</label>
+            <div class="d-flex">
+                <input id="field_validEnd" type="datetime-local" class="form-control" name="validEnd" [(ngModel)]="aRightPerson.validEnd"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_insertUserId">Insert User Id</label>
+            <input type="text" class="form-control" name="insertUserId" id="field_insertUserId"
+                [(ngModel)]="aRightPerson.insertUserId"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_insertPersonId">Insert Person Id</label>
+            <input type="text" class="form-control" name="insertPersonId" id="field_insertPersonId"
+                [(ngModel)]="aRightPerson.insertPersonId"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_insertTime">Insert Time</label>
+            <div class="d-flex">
+                <input id="field_insertTime" type="datetime-local" class="form-control" name="insertTime" [(ngModel)]="aRightPerson.insertTime"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_upinstantUserId">Upinstant User Id</label>
+            <input type="text" class="form-control" name="upinstantUserId" id="field_upinstantUserId"
+                [(ngModel)]="aRightPerson.upinstantUserId"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_upinstantPersonId">Upinstant Person Id</label>
+            <input type="text" class="form-control" name="upinstantPersonId" id="field_upinstantPersonId"
+                [(ngModel)]="aRightPerson.upinstantPersonId"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_upinstantTime">Upinstant Time</label>
+            <div class="d-flex">
+                <input id="field_upinstantTime" type="datetime-local" class="form-control" name="upinstantTime" [(ngModel)]="aRightPerson.upinstantTime"
+                  />
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

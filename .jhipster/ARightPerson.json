@@ -1,0 +1,240 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "personName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "firstName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "jobId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "otherName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sex",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "birthday",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "pic",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "icon",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mobile",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "depId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "depAddress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "depCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dutyId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dimissionFlag",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "headerFlag",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "satrapFlag",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "leaderFlag",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "postFlag1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "postFlag2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "postFlag3",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "officeTel",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fax",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mail1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mail2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "familyTel",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "familyAdd",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "familyCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "personDescribe",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "idCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pop3",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "smtp",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mailUsername",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mailPassword",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mailKeepFlag",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "personSort",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "levelNum",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "personStateId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "by01",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "by02",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "by03",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "by04",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "by05",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "by06",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "by07",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "by08",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "by09",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "by10",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "validType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "validBegin",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "validEnd",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "insertUserId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "insertPersonId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "insertTime",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "upinstantUserId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "upinstantPersonId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "upinstantTime",
+            "fieldType": "Instant"
+        }
+    ],
+    "changelogDate": "20180515063751",
+    "entityTableName": "a_right_person",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "angularJSSuffix": "mySuffix"
+}

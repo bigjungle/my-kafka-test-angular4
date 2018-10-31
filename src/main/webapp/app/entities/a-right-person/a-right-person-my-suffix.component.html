@@ -1,0 +1,176 @@
+<div>
+    <h2>
+        <span>A Right People</span>
+        <button class="btn btn-primary float-right jh-create-entity create-a-right-person-my-suffix" [routerLink]="['/', { outlets: { popup: ['a-right-person-my-suffix-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span >
+            Create new A Right Person
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="aRightPeople">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span>ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="personName"><span>Person Name</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="firstName"><span>First Name</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="jobId"><span>Job Id</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="lastName"><span>Last Name</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="otherName"><span>Other Name</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="sex"><span>Sex</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="birthday"><span>Birthday</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="pic"><span>Pic</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="icon"><span>Icon</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="mobile"><span>Mobile</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="depId"><span>Dep Id</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="depAddress"><span>Dep Address</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="depCode"><span>Dep Code</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="dutyId"><span>Duty Id</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="dimissionFlag"><span>Dimission Flag</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="headerFlag"><span>Header Flag</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="satrapFlag"><span>Satrap Flag</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="leaderFlag"><span>Leader Flag</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="postFlag1"><span>Post Flag 1</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="postFlag2"><span>Post Flag 2</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="postFlag3"><span>Post Flag 3</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="officeTel"><span>Office Tel</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="fax"><span>Fax</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="mail1"><span>Mail 1</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="mail2"><span>Mail 2</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="familyTel"><span>Family Tel</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="familyAdd"><span>Family Add</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="familyCode"><span>Family Code</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="personDescribe"><span>Person Describe</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="idCode"><span>Id Code</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="pop3"><span>Pop 3</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="smtp"><span>Smtp</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="mailUsername"><span>Mail Username</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="mailPassword"><span>Mail Password</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="mailKeepFlag"><span>Mail Keep Flag</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="personSort"><span>Person Sort</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="levelNum"><span>Level Num</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="personStateId"><span>Person State Id</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="by01"><span>By 01</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="by02"><span>By 02</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="by03"><span>By 03</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="by04"><span>By 04</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="by05"><span>By 05</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="by06"><span>By 06</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="by07"><span>By 07</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="by08"><span>By 08</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="by09"><span>By 09</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="by10"><span>By 10</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="validType"><span>Valid Type</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="validBegin"><span>Valid Begin</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="validEnd"><span>Valid End</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="insertUserId"><span>Insert User Id</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="insertPersonId"><span>Insert Person Id</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="insertTime"><span>Insert Time</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="upinstantUserId"><span>Upinstant User Id</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="upinstantPersonId"><span>Upinstant Person Id</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="upinstantTime"><span>Upinstant Time</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let aRightPerson of aRightPeople ;trackBy: trackId">
+                <td><a [routerLink]="['../a-right-person-my-suffix', aRightPerson.id ]">{{aRightPerson.id}}</a></td>
+                <td>{{aRightPerson.personName}}</td>
+                <td>{{aRightPerson.firstName}}</td>
+                <td>{{aRightPerson.jobId}}</td>
+                <td>{{aRightPerson.lastName}}</td>
+                <td>{{aRightPerson.otherName}}</td>
+                <td>{{aRightPerson.sex}}</td>
+                <td>{{aRightPerson.birthday | date:'medium'}}</td>
+                <td>{{aRightPerson.pic}}</td>
+                <td>{{aRightPerson.icon}}</td>
+                <td>{{aRightPerson.mobile}}</td>
+                <td>{{aRightPerson.depId}}</td>
+                <td>{{aRightPerson.depAddress}}</td>
+                <td>{{aRightPerson.depCode}}</td>
+                <td>{{aRightPerson.dutyId}}</td>
+                <td>{{aRightPerson.dimissionFlag}}</td>
+                <td>{{aRightPerson.headerFlag}}</td>
+                <td>{{aRightPerson.satrapFlag}}</td>
+                <td>{{aRightPerson.leaderFlag}}</td>
+                <td>{{aRightPerson.postFlag1}}</td>
+                <td>{{aRightPerson.postFlag2}}</td>
+                <td>{{aRightPerson.postFlag3}}</td>
+                <td>{{aRightPerson.officeTel}}</td>
+                <td>{{aRightPerson.fax}}</td>
+                <td>{{aRightPerson.mail1}}</td>
+                <td>{{aRightPerson.mail2}}</td>
+                <td>{{aRightPerson.familyTel}}</td>
+                <td>{{aRightPerson.familyAdd}}</td>
+                <td>{{aRightPerson.familyCode}}</td>
+                <td>{{aRightPerson.personDescribe}}</td>
+                <td>{{aRightPerson.idCode}}</td>
+                <td>{{aRightPerson.pop3}}</td>
+                <td>{{aRightPerson.smtp}}</td>
+                <td>{{aRightPerson.mailUsername}}</td>
+                <td>{{aRightPerson.mailPassword}}</td>
+                <td>{{aRightPerson.mailKeepFlag}}</td>
+                <td>{{aRightPerson.personSort}}</td>
+                <td>{{aRightPerson.levelNum}}</td>
+                <td>{{aRightPerson.personStateId}}</td>
+                <td>{{aRightPerson.by01}}</td>
+                <td>{{aRightPerson.by02}}</td>
+                <td>{{aRightPerson.by03}}</td>
+                <td>{{aRightPerson.by04}}</td>
+                <td>{{aRightPerson.by05}}</td>
+                <td>{{aRightPerson.by06}}</td>
+                <td>{{aRightPerson.by07}}</td>
+                <td>{{aRightPerson.by08}}</td>
+                <td>{{aRightPerson.by09}}</td>
+                <td>{{aRightPerson.by10}}</td>
+                <td>{{aRightPerson.validType}}</td>
+                <td>{{aRightPerson.validBegin | date:'medium'}}</td>
+                <td>{{aRightPerson.validEnd | date:'medium'}}</td>
+                <td>{{aRightPerson.insertUserId}}</td>
+                <td>{{aRightPerson.insertPersonId}}</td>
+                <td>{{aRightPerson.insertTime | date:'medium'}}</td>
+                <td>{{aRightPerson.upinstantUserId}}</td>
+                <td>{{aRightPerson.upinstantPersonId}}</td>
+                <td>{{aRightPerson.upinstantTime | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../a-right-person-my-suffix', aRightPerson.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'a-right-person-my-suffix/'+ aRightPerson.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'a-right-person-my-suffix/'+ aRightPerson.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+        <div *ngIf="aRightPeople && aRightPeople.length">
+            <div class="row justify-content-center">
+                <jhi-item-count [page]="page" [total]="queryCount" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+            </div>
+            <div class="row justify-content-center">
+                <ngb-pagination [collectionSize]="totalItems" [(page)]="page" (pageChange)="loadPage(page)"></ngb-pagination>
+            </div>
+        </div>
+</div>

@@ -1,0 +1,104 @@
+<div>
+    <h2>
+        <span>系统名录</span>
+        <button class="btn btn-primary float-right jh-create-entity create-sys-dir-sdm-suffix" [routerLink]="['/', { outlets: { popup: ['sys-dir-sdm-suffix-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span >
+            新建
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="sysDirs">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)" style=" overflow-y:auto">
+            <th jhiSortBy="id"><span>ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="name" style="min-width: 120px;"><span>名称</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="type" style="min-width: 80px;" ><span>类型</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="code"><span>代码</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="assetNumber" style="min-width: 120px;" ><span>资产编码</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="ipv4" style="min-width: 80px;"><span>Ipv4</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="ipv6" style="min-width: 80px;"><span>Ipv6</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="model"><span>型号</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="config"><span>结构</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="uses" style="min-width: 80px;" ><span>用途</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="developer" style="min-width: 120px;" ><span>生产商</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="version" style="min-width: 80px;" ><span>版本</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="prodDate" style="min-width: 120px;" ><span>生产日期</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="deployDate" style="min-width: 120px;" ><span>部署日期</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="serviceLife" style="min-width: 120px;" ><span>使用年限</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="status"><span>状态</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="confidentLevel" style="min-width: 120px;" ><span>涉密等级</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="parentId" style="min-width: 120px;" ><span>所属系统</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="departmentName" style="min-width: 120px;" ><span>所属部门</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="personName" style="min-width: 120px;" ><span>负责人员</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let sysDir of sysDirs ;trackBy: trackId">
+                <td><a [routerLink]="['../sys-dir-sdm-suffix', sysDir.id ]">{{sysDir.id}}</a></td>
+                <td>{{sysDir.name}}</td>
+                <td>{{sysDir.type}}</td>
+                <td>{{sysDir.code}}</td>
+                <td>{{sysDir.assetNumber}}</td>
+                <td>{{sysDir.ipv4}}</td>
+                <td>{{sysDir.ipv6}}</td>
+                <td>{{sysDir.model}}</td>
+                <td>{{sysDir.config}}</td>
+                <td>{{sysDir.uses}}</td>
+                <td>{{sysDir.developer}}</td>
+                <td>{{sysDir.version}}</td>
+                <td>{{sysDir.prodDate | date:'medium'}}</td>
+                <td>{{sysDir.deployDate | date:'medium'}}</td>
+                <td>{{sysDir.serviceLife}}</td>
+                <td>{{sysDir.status}}</td>
+                <td>{{sysDir.confidentLevel}}</td>
+                <td>
+                    <div *ngIf="sysDir.parentId">
+                        <a [routerLink]="['../sys-dir-sdm-suffix', sysDir.parentId  ]" >{{sysDir.parentId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="sysDir.departmentId">
+                        <a [routerLink]="['../department-sdm-suffix', sysDir.departmentId  ]" >{{sysDir.departmentName}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="sysDir.personId">
+                        <a [routerLink]="['../person-sdm-suffix', sysDir.personId  ]" >{{sysDir.personName}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../sys-dir-sdm-suffix', sysDir.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'sys-dir-sdm-suffix/'+ sysDir.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'sys-dir-sdm-suffix/'+ sysDir.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,136 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="mySysDirLabel">Create or edit a Sys Dir</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!sysDir.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="sysDir.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                [(ngModel)]="sysDir.name"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_type">Type</label>
+            <input type="text" class="form-control" name="type" id="field_type"
+                [(ngModel)]="sysDir.type"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_code">Code</label>
+            <input type="text" class="form-control" name="code" id="field_code"
+                [(ngModel)]="sysDir.code"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_assetNumber">Asset Number</label>
+            <input type="text" class="form-control" name="assetNumber" id="field_assetNumber"
+                [(ngModel)]="sysDir.assetNumber"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_ipv4">Ipv 4</label>
+            <input type="text" class="form-control" name="ipv4" id="field_ipv4"
+                [(ngModel)]="sysDir.ipv4"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_ipv6">Ipv 6</label>
+            <input type="text" class="form-control" name="ipv6" id="field_ipv6"
+                [(ngModel)]="sysDir.ipv6"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_model">Model</label>
+            <input type="text" class="form-control" name="model" id="field_model"
+                [(ngModel)]="sysDir.model"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_config">Config</label>
+            <input type="text" class="form-control" name="config" id="field_config"
+                [(ngModel)]="sysDir.config"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_uses">Uses</label>
+            <input type="text" class="form-control" name="uses" id="field_uses"
+                [(ngModel)]="sysDir.uses"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_developer">Developer</label>
+            <input type="text" class="form-control" name="developer" id="field_developer"
+                [(ngModel)]="sysDir.developer"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_version">Version</label>
+            <input type="text" class="form-control" name="version" id="field_version"
+                [(ngModel)]="sysDir.version"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_prodDate">Prod Date</label>
+            <div class="d-flex">
+                <input id="field_prodDate" type="datetime-local" class="form-control" name="prodDate" [(ngModel)]="sysDir.prodDate"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_deployDate">Deploy Date</label>
+            <div class="d-flex">
+                <input id="field_deployDate" type="datetime-local" class="form-control" name="deployDate" [(ngModel)]="sysDir.deployDate"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_serviceLife">Service Life</label>
+            <input type="text" class="form-control" name="serviceLife" id="field_serviceLife"
+                [(ngModel)]="sysDir.serviceLife"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_status">Status</label>
+            <input type="text" class="form-control" name="status" id="field_status"
+                [(ngModel)]="sysDir.status"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_confidentLevel">Confident Level</label>
+            <input type="text" class="form-control" name="confidentLevel" id="field_confidentLevel"
+                [(ngModel)]="sysDir.confidentLevel"  />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" for="field_parent">Parent</label>
+            <select class="form-control" id="field_parent" name="parent" [(ngModel)]="sysDir.parentId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sysDirOption.id" *ngFor="let sysDirOption of sysdirs; trackBy: trackSysDirById">{{sysDirOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_department">Department</label>
+            <select class="form-control" id="field_department" name="department" [(ngModel)]="sysDir.departmentId"  required>
+                <option *ngIf="!editForm.value.department" [ngValue]="null" selected></option>
+                <option [ngValue]="departmentOption.id" *ngFor="let departmentOption of departments; trackBy: trackDepartmentById">{{departmentOption.name}}</option>
+            </select>
+        </div>
+        <div [hidden]="!(editForm.controls.department?.dirty && editForm.controls.department?.invalid)">
+            <small class="form-text text-danger"
+                [hidden]="!editForm.controls.department?.errors?.required">
+                This field is required.
+            </small>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_person">Person</label>
+            <select class="form-control" id="field_person" name="person" [(ngModel)]="sysDir.personId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="personOption.id" *ngFor="let personOption of people; trackBy: trackPersonById">{{personOption.name}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

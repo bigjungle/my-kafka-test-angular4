@@ -1,0 +1,1 @@
+yo jhipster:import-jdl .\jdl\jhipster-jdl.jh

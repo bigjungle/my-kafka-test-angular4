@@ -1,0 +1,155 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myARightUserLabel">Create or edit a A Right User</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!aRightUser.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="aRightUser.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_userPassword">User Password</label>
+            <input type="text" class="form-control" name="userPassword" id="field_userPassword"
+                [(ngModel)]="aRightUser.userPassword" maxlength="640" />
+            <div [hidden]="!(editForm.controls.userPassword?.dirty && editForm.controls.userPassword?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.userPassword?.errors?.maxlength">
+                   This field cannot be longer than 640 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_processPassword">Process Password</label>
+            <input type="text" class="form-control" name="processPassword" id="field_processPassword"
+                [(ngModel)]="aRightUser.processPassword" maxlength="640" />
+            <div [hidden]="!(editForm.controls.processPassword?.dirty && editForm.controls.processPassword?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.processPassword?.errors?.maxlength">
+                   This field cannot be longer than 640 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_userSort">User Sort</label>
+            <input type="text" class="form-control" name="userSort" id="field_userSort"
+                [(ngModel)]="aRightUser.userSort"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_userPasswordValiinstantTimes">User Password Valiinstant Times</label>
+            <input type="number" class="form-control" name="userPasswordValiinstantTimes" id="field_userPasswordValiinstantTimes"
+                [(ngModel)]="aRightUser.userPasswordValiinstantTimes"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_userPasswordLockFlag">User Password Lock Flag</label>
+            <input type="text" class="form-control" name="userPasswordLockFlag" id="field_userPasswordLockFlag"
+                [(ngModel)]="aRightUser.userPasswordLockFlag"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_procPasswordValiinstantTimes">Proc Password Valiinstant Times</label>
+            <input type="number" class="form-control" name="procPasswordValiinstantTimes" id="field_procPasswordValiinstantTimes"
+                [(ngModel)]="aRightUser.procPasswordValiinstantTimes"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_procPasswordLockFlag">Proc Password Lock Flag</label>
+            <input type="text" class="form-control" name="procPasswordLockFlag" id="field_procPasswordLockFlag"
+                [(ngModel)]="aRightUser.procPasswordLockFlag"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_userProp">User Prop</label>
+            <input type="text" class="form-control" name="userProp" id="field_userProp"
+                [(ngModel)]="aRightUser.userProp"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_by01">By 01</label>
+            <input type="text" class="form-control" name="by01" id="field_by01"
+                [(ngModel)]="aRightUser.by01"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_by02">By 02</label>
+            <input type="text" class="form-control" name="by02" id="field_by02"
+                [(ngModel)]="aRightUser.by02"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_by03">By 03</label>
+            <input type="text" class="form-control" name="by03" id="field_by03"
+                [(ngModel)]="aRightUser.by03"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_by04">By 04</label>
+            <input type="text" class="form-control" name="by04" id="field_by04"
+                [(ngModel)]="aRightUser.by04"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_by05">By 05</label>
+            <input type="text" class="form-control" name="by05" id="field_by05"
+                [(ngModel)]="aRightUser.by05"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_validType">Valid Type</label>
+            <input type="text" class="form-control" name="validType" id="field_validType"
+                [(ngModel)]="aRightUser.validType"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_validBegin">Valid Begin</label>
+            <div class="d-flex">
+                <input id="field_validBegin" type="datetime-local" class="form-control" name="validBegin" [(ngModel)]="aRightUser.validBegin"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_validEnd">Valid End</label>
+            <div class="d-flex">
+                <input id="field_validEnd" type="datetime-local" class="form-control" name="validEnd" [(ngModel)]="aRightUser.validEnd"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_insertUserId">Insert User Id</label>
+            <input type="text" class="form-control" name="insertUserId" id="field_insertUserId"
+                [(ngModel)]="aRightUser.insertUserId"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_insertPersonId">Insert Person Id</label>
+            <input type="text" class="form-control" name="insertPersonId" id="field_insertPersonId"
+                [(ngModel)]="aRightUser.insertPersonId"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_insertTime">Insert Time</label>
+            <div class="d-flex">
+                <input id="field_insertTime" type="datetime-local" class="form-control" name="insertTime" [(ngModel)]="aRightUser.insertTime"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_upinstantUserId">Upinstant User Id</label>
+            <input type="text" class="form-control" name="upinstantUserId" id="field_upinstantUserId"
+                [(ngModel)]="aRightUser.upinstantUserId"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_upinstantPersonId">Upinstant Person Id</label>
+            <input type="text" class="form-control" name="upinstantPersonId" id="field_upinstantPersonId"
+                [(ngModel)]="aRightUser.upinstantPersonId"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_upinstantTime">Upinstant Time</label>
+            <div class="d-flex">
+                <input id="field_upinstantTime" type="datetime-local" class="form-control" name="upinstantTime" [(ngModel)]="aRightUser.upinstantTime"
+                  />
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>
