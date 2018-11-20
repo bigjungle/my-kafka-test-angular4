@@ -52,10 +52,10 @@ spring:
       stream:
         bindings:
             messageChannel:
-                destination: greetings
+                destination: greetings1
                 content-type: application/json
             subscribableChannel:
-                    destination: greetings
+                    destination: greetings1
 security:
     basic:
         enabled: false

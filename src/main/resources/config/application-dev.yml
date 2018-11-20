@@ -28,8 +28,8 @@ spring:
         stream:
             kafka:
                 binder:
-                    brokers: localhost
-                    zk-nodes: localhost
+                    brokers: 192.168.10.191
+                    zk-nodes: 192.168.10.191
             bindings:
                 output:
                     destination: topic-jhipster
