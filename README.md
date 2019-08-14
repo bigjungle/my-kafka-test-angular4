@@ -1,3 +1,4 @@
+#As Angular 4 example 
 #my-kafka-test by JungleYang
 mvnw
 yarn start
